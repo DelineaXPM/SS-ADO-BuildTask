@@ -3,7 +3,7 @@
     "id": "thycotic-tss-task",
     "name": "Thycotic Secret Server Azure DevOps Task",
     "version": "0.0.1",
-    "publisher": "thycotic",
+    "publisher": "thycotic-software",
     "targets": [
         {
             "id": "Microsoft.VisualStudio.Services"
