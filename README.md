@@ -4,14 +4,19 @@ This repository contains the code for an Azure DevOps pipeline task which is use
 ## Prerequisites
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [Node.js](https://nodejs.org)
-* [TypeScript Compiler 2.2.0+](https://www.npmjs.com/package/typescript)
+* [TypeScript Compiler](https://www.npmjs.com/package/typescript)
 * CLI for Azure DevOps (tfx-cli) to package the extension. You can install *tfx-cli* by running *npm i -g tfx-cli*.
 
 ## General
 The task code can be found in the **TSSV1** directory. The entry point for the task is *index.ts* and most of the core code can be found in *operations/Server.ts*.
 
 ## Compiling
-From the task directory **TSSV1**, run the following:
+From the task directory **TSSV1**, first install the task dependencies:
+```
+TSSV1> npm install
+```
+
+Then to compile the task:
 ```
 TSSV1> tsc
 ```
@@ -48,27 +53,6 @@ Create a *launch.json* in your **.vscode** directory:
 From the 'Run' menu, select 'Start Debugging' OR F5.
 
 ## Unit Tests
-Create a *launch.json* in your **.vscode** directory:
-```json
-{
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Mocha All",
-            "program": "${env:APPDATA}/npm/node_modules/mocha/bin/_mocha",
-            "args": [
-                "--timeout",
-                "999999",
-                "--colors",
-                "${workspaceFolder}\\TSSV1\\tests\\_suite.js"
-            ],
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen"
-        }
-    ]
-}
 ```
 Create a *success_config.json* in the **TSSV1\tests** directory:
 ```json
