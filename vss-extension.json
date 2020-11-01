@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "thycotic-tss-task",
     "name": "Thycotic Secret Server Azure DevOps Task",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "thycotic-software",
     "targets": [
         {
