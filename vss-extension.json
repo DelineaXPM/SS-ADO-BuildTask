@@ -21,6 +21,14 @@
             "path": "TSSV1"
         }
     ],
+	"content": {
+		"details": {
+			"path": "overview.md"
+		},
+		"license": {
+			"path": "LICENSE"
+		}
+	},
     "links": {
         "home": {
             "uri": "https://thycotic.com"
