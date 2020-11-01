@@ -21,6 +21,23 @@
             "path": "TSSV1"
         }
     ],
+    "links": {
+        "home": {
+            "uri": "https://thycotic.com"
+        },
+        "learn": {
+            "uri": "https://thycotic.com"
+        },
+        "support": {
+            "uri": "https://thycotic.com/support/"
+        },
+        "repository": {
+            "uri": "https://github.com/thycotic/TSS-ADO-BuildTask"
+        },
+        "issues": {
+            "uri": "https://github.com/thycotic/TSS-ADO-BuildTask/issues"
+        }
+    },
     "contributions": [
         {
             "id": "thycotic-tss-build-release-task",
@@ -32,5 +49,12 @@
                 "name": "TSSV1"
             }
         }
+    ],
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/thycotic/TSS-ADO-BuildTask"
+    },
+    "galleryFlags": [
+        "Preview"
     ]
 }
