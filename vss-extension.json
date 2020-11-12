@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "thycotic-tss-task",
     "name": "Thycotic Secret Server Azure DevOps Task",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "thycotic-software",
     "targets": [
         {
@@ -63,6 +63,6 @@
         "uri": "https://github.com/thycotic/TSS-ADO-BuildTask"
     },
     "galleryFlags": [
-        "Preview"
+        "Public"
     ]
 }
