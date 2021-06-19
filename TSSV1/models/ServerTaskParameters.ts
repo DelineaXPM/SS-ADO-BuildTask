@@ -61,6 +61,24 @@ export class ServerTaskParameters {
     }
 
     /**
+     * Determines whether the field should be considered 'secret'
+     * @param fieldName is the field name or slug in the secret field
+     */
+    public isSecret(fieldName: string): boolean {
+		let secrets: Array<string>;
+		secrets = ['password', 'private'];
+        let lowered: string = fieldName.toLowerCase();
+
+		for (let secret of secrets) {
+			if (lowered.indexOf(secret) != -1) {
+				return true;
+			}
+		}
+
+		return false;
+    }
+
+    /**
      * Determines if all the fields should be read from the secret.
      * @returns true if the filter is "*" or undefined/empty, false otherwise.
      */

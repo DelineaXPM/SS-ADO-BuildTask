@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "azure-pipelines-task-lib": "^2.9.6",
-    "typed-rest-client": "^1.7.3"
+    "typed-rest-client": "^1.8.4"
   },
   "devDependencies": {
     "@types/mocha": "^8.0.1",

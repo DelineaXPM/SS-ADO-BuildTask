@@ -58,8 +58,9 @@ async function run() {
                         if (field.slug) {
                             let name: string = taskParameters.getVariableName(field.slug);
                             let value: string = field.itemValue;
-                            tl.setVariable(name, value, false);
-                            console.log(`Stored value for field '${fieldName}' in the variable '${name}'`);
+                            let secret: boolean = taskParameters.isSecret(name);
+                            tl.setVariable(name, value, secret);
+                            console.log(`Stored value for field '${fieldName}' in the variable '${name}' (secret: ${secret})`);
                         }
                         else {
                             console.log(`Slug for '${fieldName}' is undefined`);
