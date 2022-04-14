@@ -211,3 +211,7 @@ _Pvt_Extensions/
 ModelManifest.xml
 /Package
 LoadTest.code-workspace
+
+# Test config files
+success_config.json
+failure_config.json
