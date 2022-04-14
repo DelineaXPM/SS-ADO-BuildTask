@@ -56,27 +56,31 @@ From the 'Run' menu, select 'Start Debugging' OR F5.
 ```
 Create a *success_config.json* in the **TSSV1\tests** directory:
 ```json
-{
-    "serverUrl": "https://mytenent.secretservercloud.com",
-    "credentials": {
-        "username": "myusername",
-        "password": "mypassword"
-    },
-    "secretId": 1,
-    "variablePrefix": "TSS_"
-}
+[
+    {
+        "serverUrl": "https://mytenent.secretservercloud.com",
+        "credentials": {
+            "username": "myusername",
+            "password": "mypassword"
+        },
+        "secretId": 1,
+        "variablePrefix": "TSS_"
+    }
+]
 ```
 Create a *failure_config.json* in the **TSSV1\tests** directory:
 ```json
-{
-    "serverUrl": "https://mytenent.secretservercloud.com",
-    "credentials": {
-        "username": "myusername",
-        "password": "mypassword"
-    },
-    "secretId": 1234567890,
-    "variablePrefix": "TSS_"
-}
+[
+    {
+        "serverUrl": "https://mytenent.secretservercloud.com",
+        "credentials": {
+            "username": "myusername",
+            "password": "mypassword"
+        },
+        "secretId": 1234567890,
+        "variablePrefix": "TSS_"
+    }
+]
 ```
 From the task directory **TSSV1**, run the following:
 ```
