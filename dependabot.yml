@@ -1,0 +1,10 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    ignore:
+      - dependency-name: "glob-parent"
+        # https://github.com/paulmillr/chokidar/issues/1191
+        versions: ["5.1.2"]
