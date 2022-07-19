@@ -5,13 +5,13 @@
     "friendlyName": "Delinea SS",
     "description": "Retrieve secrets from Delinea Secret Server",
     "helpUrl": "https://github.com/DelineaXPM/SecretServer.AzureDevOpsTask",
-    "helpMarkDown": "[Learn more about this task](https://github.com/DelineaXPM/TSS-ADO-BuildTask)",
+    "helpMarkDown": "[Learn more about this task](https://github.com/DelineaXPM/SS-ADO-BuildTask)",
     "category": "Deploy",
     "author": "Delinea",
     "version": {
         "Major": 0,
         "Minor": 0,
-        "Patch": 4
+        "Patch": 5
     },
     "instanceNameFormat": "Retrieve secret $(SecretId) from Delinea Secret Server",
     "inputs": [

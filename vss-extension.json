@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "delinea-ss-task",
     "name": "Delinea Secret Server Azure DevOps Task",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "publisher": "delinea-software",
     "targets": [
         {
@@ -18,7 +18,7 @@
     },
     "files": [
         {
-            "path": "TSSV1"
+            "path": "DSSV1"
         }
     ],
 	"content": {
@@ -40,10 +40,10 @@
             "uri": "https://delinea.com/support/"
         },
         "repository": {
-            "uri": "https://github.com/DelineaXPM/TSS-ADO-BuildTask"
+            "uri": "https://github.com/DelineaXPM/SS-ADO-BuildTask"
         },
         "issues": {
-            "uri": "https://github.com/DelineaXPM/TSS-ADO-BuildTask/issues"
+            "uri": "https://github.com/DelineaXPM/SS-ADO-BuildTask/issues"
         }
     },
     "contributions": [
@@ -54,13 +54,13 @@
                 "ms.vss-distributed-task.tasks"
             ],
             "properties": {
-                "name": "TSSV1"
+                "name": "DSSV1"
             }
         }
     ],
     "repository": {
         "type": "git",
-        "uri": "https://github.com/DelineaXPM/TSS-ADO-BuildTask"
+        "uri": "https://github.com/DelineaXPM/SS-ADO-BuildTask"
     },
     "galleryFlags": [
         "Public"
