@@ -1,19 +1,19 @@
 {
     "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
     "id": "122a747a-e058-419e-9a45-23b5590ae89a",
-    "name": "ThycoticTSS",
-    "friendlyName": "Thycotic TSS",
-    "description": "Retrieve secrets from Thycotic Secret Server",
-    "helpUrl": "https://github.com/thycotic/SecretServer.AzureDevOpsTask",
-    "helpMarkDown": "[Learn more about this task](https://github.com/thycotic/TSS-ADO-BuildTask)",
+    "name": "DelineaSS",
+    "friendlyName": "Delinea SS",
+    "description": "Retrieve secrets from Delinea Secret Server",
+    "helpUrl": "https://github.com/DelineaXPM/SecretServer.AzureDevOpsTask",
+    "helpMarkDown": "[Learn more about this task](https://github.com/DelineaXPM/TSS-ADO-BuildTask)",
     "category": "Deploy",
-    "author": "The Migus Group",
+    "author": "Delinea",
     "version": {
         "Major": 0,
         "Minor": 0,
         "Patch": 4
     },
-    "instanceNameFormat": "Retrieve secret $(SecretId) from Thycotic Secret Server",
+    "instanceNameFormat": "Retrieve secret $(SecretId) from Delinea Secret Server",
     "inputs": [
         {
             "name": "ServerUrl",
@@ -82,7 +82,7 @@
             "name": "VariablePrefix",
             "type": "string",
             "label": "Variable Prefix",
-            "defaultValue": "TSS_",
+            "defaultValue": "DSS_",
             "required": false,
             "helpMarkDown": "Variable prefix which is applied to all field/slug names when storing the values in the environment.",
             "validation": {

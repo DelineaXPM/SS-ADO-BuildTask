@@ -8,7 +8,7 @@ import { Secret } from "../models/Secret";
 var _httpClient = new httpClient.HttpClient("server-client");
 
 /**
- * Represents a Thycotic DevOps Secret Server.
+ * Represents a Delinea DevOps Secret Server.
 */
 export class Server {
     private config: Configuration;
