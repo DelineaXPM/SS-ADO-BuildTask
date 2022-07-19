@@ -1,5 +1,5 @@
-# The Thycotic Secret Server Azure DevOps Task
-This repository contains the code for an Azure DevOps pipeline task which is used to read secrets from Thycotic Secret Server.
+# The Delinea Secret Server Azure DevOps Task
+This repository contains the code for an Azure DevOps pipeline task which is used to read secrets from Delinea Secret Server.
 
 ## Prerequisites
 * [Visual Studio Code](https://code.visualstudio.com/)
@@ -44,7 +44,7 @@ Create a *launch.json* in your **.vscode** directory:
                 "INPUT_SERVERURL": "https://mytenent.secretservercloud.com",
                 "INPUT_SECRETID": "1",
                 "INPUT_DATAFILTER": "*",
-                "INPUT_VARIABLEPREFIX": "TSS_"
+                "INPUT_VARIABLEPREFIX": "DSS_"
             }
         }
     ]
@@ -64,7 +64,7 @@ Create a *success_config.json* in the **TSSV1\tests** directory:
             "password": "mypassword"
         },
         "secretId": 1,
-        "variablePrefix": "TSS_"
+        "variablePrefix": "DSS_"
     }
 ]
 ```
@@ -78,7 +78,7 @@ Create a *failure_config.json* in the **TSSV1\tests** directory:
             "password": "mypassword"
         },
         "secretId": 1234567890,
-        "variablePrefix": "TSS_"
+        "variablePrefix": "DSS_"
     }
 ]
 ```

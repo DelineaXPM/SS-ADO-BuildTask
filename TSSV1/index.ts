@@ -46,7 +46,7 @@ async function run() {
         /**
          * Get the list of field names/slugs requested and iterate over
          * them setting a variable in the environment for each with the
-         * specified variable prefix (Default: "TSS_") on each key.
+         * specified variable prefix (Default: "DSS_") on each key.
          */
         let fieldNames: string[] = taskParameters.getFieldNames(secret);
 
