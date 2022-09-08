@@ -1,6 +1,6 @@
 {
     "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
-    "id": "122a747a-e058-419e-9a45-23b5590ae89a",
+    "id": "22D31716-0E3C-45D3-8B7C-675C4AAC0E20",
     "name": "DelineaSS",
     "friendlyName": "Delinea SS",
     "description": "Retrieve secrets from Delinea Secret Server",

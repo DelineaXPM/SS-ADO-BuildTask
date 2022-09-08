@@ -3,7 +3,7 @@
     "id": "delinea-ss-task",
     "name": "Delinea Secret Server Azure DevOps Task",
     "version": "0.0.5",
-    "publisher": "delinea-software",
+    "publisher": "Delinea",
     "targets": [
         {
             "id": "Microsoft.VisualStudio.Services"
