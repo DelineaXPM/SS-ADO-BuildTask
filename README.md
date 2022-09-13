@@ -1,6 +1,8 @@
 # The Delinea Secret Server Azure DevOps Task
 This repository contains the code for an Azure DevOps pipeline task which is used to read secrets from Delinea Secret Server.
 
+Please find the Delinea Secret Server ADO Task in the VisualStudio Marketplace here: https://marketplace.visualstudio.com/items?itemName=Delinea.delinea-ss-task
+
 ## Prerequisites
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [Node.js](https://nodejs.org)
