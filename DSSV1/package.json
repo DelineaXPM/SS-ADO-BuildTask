@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@types/mocha": "10.0.0",
-    "@types/node": "16.11.63",
+    "@types/node": "16.11.64",
     "@types/q": "1.5.5",
     "sync-request": "6.1.0"
   }
