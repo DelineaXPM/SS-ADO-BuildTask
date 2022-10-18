@@ -18,5 +18,8 @@
     "@types/node": "16.11.66",
     "@types/q": "1.5.5",
     "sync-request": "6.1.0"
+  },
+  "overrides" : {
+    "mockery": "2.1.0"
   }
 }
