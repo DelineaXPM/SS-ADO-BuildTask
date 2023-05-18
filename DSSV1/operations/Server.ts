@@ -98,8 +98,8 @@ export class Server {
     */
     private async getResponseContent(response: httpClient.HttpClientResponse): Promise<string> {
         if (!this.isSuccessStatusCode(response.message.statusCode)) {
-            console.log(`server.getResponseContent: failed code ${response.message.statusCode}`);
-            return "";
+            console.log(`server.getResponseContent: failed code ${response.message.statusCode} and response body ${await response.readBody()}`);
+            return "{}";
         }
 
         let body: string = await response.readBody();
