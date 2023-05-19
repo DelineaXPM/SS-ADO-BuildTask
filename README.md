@@ -80,10 +80,33 @@ Create a *failure_config.json* in the **DSSV1\tests** directory:
     "variablePrefix": "DSS_"
 }
 ```
-From the task directory **DSSV1**, run the following:
+From the task directory **DSSV1**, run:
 ```
-DSSV1> mocha .\tests\_suite.js
+npm run test
 ```
+## Debugging Unit Tests in VSCode
+Add this configuration to launch.json
+```
+{
+    "args": [
+        "-u",
+        "bdd",
+        "--timeout",
+        "999999",
+        "--colors",
+        "${workspaceFolder}/DSSV1/tests"
+    ],
+    "internalConsoleOptions": "openOnSessionStart",
+    "name": "Mocha Tests",
+    "program": "${workspaceFolder}/DSSV1/node_modules/mocha/bin/_mocha",
+    "request": "launch",
+    "skipFiles": [
+        "<node_internals>/**"
+    ],
+    "type": "node",
+    "cwd": "${workspaceRoot}/DSSV1/",
+}
+````
 
 # Packaging the extension
 Package the extension into a .vsix file using the following command from the repository root:

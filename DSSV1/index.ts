@@ -28,7 +28,7 @@ async function run() {
          * Make sure the secret id has been specified.
          */
         if (!taskParameters.secretId) {
-            tl.setResult(tl.TaskResult.Failed, "Secret id not specified");
+            tl.setResult(tl.TaskResult.Failed, "Secret id not specified", true);
             return;
         }
 
@@ -36,8 +36,8 @@ async function run() {
          * Get the secret from the server.
          */
         let secret: Secret = await server.getSecret(taskParameters.secretId);
-        if (!secret) {
-            tl.setResult(tl.TaskResult.Failed, "Secret not found");
+        if (!secret.id) {
+            tl.setResult(tl.TaskResult.Failed, "Secret not found", true);
             return;
         }
 
@@ -75,11 +75,11 @@ async function run() {
             }
         });
 
-        tl.setResult(tl.TaskResult.Succeeded, "");
+        tl.setResult(tl.TaskResult.Succeeded, "", true);
     }
     catch (err) {
         console.log(err.message);
-        tl.setResult(tl.TaskResult.Failed, err.message);
+        tl.setResult(tl.TaskResult.Failed, err.message, true);
     }
 }
 

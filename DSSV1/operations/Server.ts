@@ -94,12 +94,12 @@ export class Server {
     /**
      * Gets the http response body.
      * @param response the http response
-     * @returns the reponse body as a string if the status code indicates success, empty string otherwise
+     * @returns the response body as a string if the status code indicates success, empty string otherwise
     */
     private async getResponseContent(response: httpClient.HttpClientResponse): Promise<string> {
         if (!this.isSuccessStatusCode(response.message.statusCode)) {
-            console.log(`server.getResponseContent: failed code ${response.message.statusCode}`);
-            return "";
+            console.log(`server.getResponseContent: failed code ${response.message.statusCode} and response body ${await response.readBody()}`);
+            return "{}";
         }
 
         let body: string = await response.readBody();
