@@ -86,7 +86,7 @@ npm run test
 ```
 ## Debugging Unit Tests in VSCode
 Add this configuration to launch.json
-```
+```json
 {
     "args": [
         "-u",

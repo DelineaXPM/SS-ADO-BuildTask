@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "delinea-ss-task",
     "name": "Delinea Secret Server Azure DevOps Task",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "publisher": "Delinea",
     "targets": [
         {
