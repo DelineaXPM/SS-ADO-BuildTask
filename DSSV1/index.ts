@@ -58,7 +58,7 @@ async function run() {
                         if (field.slug) {
                             let name: string = taskParameters.getVariableName(field.slug);
                             let value: string = field.itemValue;
-                            let secret: boolean = taskParameters.isSecret(name);
+                            let secret: boolean = field.isPassword ?? false;
                             tl.setVariable(name, value, secret);
                             console.log(`Stored value for field '${fieldName}' in the variable '${name}' (secret: ${secret})`);
                         }
