@@ -41,8 +41,8 @@ Create a *launch.json* in your **.vscode** directory:
                 "${workspaceFolder}/**/*.js"
             ],
             "env": {
-                "INPUT_USERNAME": "myusername",
-                "INPUT_PASSWORD": "mypassword",
+                "INPUT_USERNAME": "ExampleUsername",
+                "INPUT_PASSWORD": "ExamplePassword12#",
                 "INPUT_SERVERURL": "https://mytenent.secretservercloud.com",
                 "INPUT_SECRETID": "1",
                 "INPUT_DATAFILTER": "*",
