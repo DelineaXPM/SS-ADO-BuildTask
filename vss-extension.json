@@ -1,15 +1,15 @@
 {
     "manifestVersion": 1,
-    "id": "delinea-ss-task",
-    "name": "Delinea Secret Server Azure DevOps Task",
-    "version": "0.0.8",
-    "publisher": "Delinea",
+    "id": "cloudkitects-ss-task",
+    "name": "Cloudkitects Secret Server Azure DevOps Task",
+    "version": "1.0.0",
+    "publisher": "CLoudkitects",
     "targets": [
         {
             "id": "Microsoft.VisualStudio.Services"
         }
     ],    
-    "description": "Azure DevOps task for accessing secrets from Delinea Secret Server",
+    "description": "Cloudkitects Azure DevOps task for accessing secrets from Delinea Secret Server",
     "categories": [
         "Azure Pipelines"
     ],
@@ -31,24 +31,24 @@
 	},
     "links": {
         "home": {
-            "uri": "https://delinea.com"
+            "uri": "https://cloudkitects.com"
         },
         "learn": {
-            "uri": "https://delinea.com"
+            "uri": "https://cloudkitects.com"
         },
         "support": {
-            "uri": "https://delinea.com/support/"
+            "uri": "https://cloudkitects.com/support/"
         },
         "repository": {
-            "uri": "https://github.com/DelineaXPM/SS-ADO-BuildTask"
+            "uri": "https://github.com/cloudkitects/SS-ADO-BuildTask"
         },
         "issues": {
-            "uri": "https://github.com/DelineaXPM/SS-ADO-BuildTask/issues"
+            "uri": "https://github.com/cloudkitects/SS-ADO-BuildTask/issues"
         }
     },
     "contributions": [
         {
-            "id": "delinea-ss-build-release-task",
+            "id": "cloudkitects-ss-build-release-task",
             "type": "ms.vss-distributed-task.task",
             "targets": [
                 "ms.vss-distributed-task.tasks"
@@ -60,7 +60,7 @@
     ],
     "repository": {
         "type": "git",
-        "uri": "https://github.com/DelineaXPM/SS-ADO-BuildTask"
+        "uri": "https://github.com/cloudkitects/SS-ADO-BuildTask"
     },
     "galleryFlags": [
         "Public"
