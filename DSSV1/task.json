@@ -68,6 +68,14 @@
             "helpMarkDown": "Enter the id for your secret."
         },
         {
+            "name": "Comment",
+            "type": "string",
+            "label": "Comment",
+            "defaultValue": "",
+            "required": false,
+            "helpMarkDown": "Enter a comment to check this secret out when required by policy."
+        },
+        {
             "name": "FieldFilter",
             "type": "string",
             "label": "Field Filter",
