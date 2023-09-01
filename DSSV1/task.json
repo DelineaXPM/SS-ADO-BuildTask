@@ -1,17 +1,17 @@
 {
     "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
-    "id": "22D31716-0E3C-45D3-8B7C-675C4AAC0E20",
-    "name": "DelineaSS",
-    "friendlyName": "Delinea SS",
+    "id": "8643DB72-E954-4B85-9561-284F81831AFA",
+    "name": "CloudkitectsSS",
+    "friendlyName": "Cloudkitects SS",
     "description": "Retrieve secrets from Delinea Secret Server",
-    "helpUrl": "https://github.com/DelineaXPM/SecretServer.AzureDevOpsTask",
-    "helpMarkDown": "[Learn more about this task](https://github.com/DelineaXPM/SS-ADO-BuildTask)",
+    "helpUrl": "https://github.com/cloudkitects/SS-ADO-BuildTask",
+    "helpMarkDown": "[Learn more about this task](https://github.com/cloudkitects/SS-ADO-BuildTask)",
     "category": "Deploy",
-    "author": "Delinea",
+    "author": "Cloudkitects",
     "version": {
-        "Major": 0,
+        "Major": 1,
         "Minor": 0,
-        "Patch": 8
+        "Patch": 0
     },
     "instanceNameFormat": "Retrieve secret $(SecretId) from Delinea Secret Server",
     "inputs": [
