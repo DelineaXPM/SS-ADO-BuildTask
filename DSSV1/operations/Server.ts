@@ -26,9 +26,11 @@ export class Server {
      * @param id specifies the secret id
      * @returns the secret as a JSON string
     */
-    public async getSecret(id: string, comment: string | null): Promise<Secret> {
+    public async getSecret(id: string, comment: string | undefined): Promise<Secret> {
         console.log(`server.getSecret: ${id}`);
-        let response: string = await this.accessResource("GET", "secrets", id, { autoComment: comment } as object);
+
+        let response: string = await this.accessResource("GET", "secrets", id, null, comment ? `autoComment=${comment}` : "");
+
         let secret: Secret = Object.assign(new Secret, JSON.parse(response));
         return secret;
     }
@@ -42,8 +44,9 @@ export class Server {
      * @param input object most typically be used for 'POST' methods, null otherwise
      * @returns the resource as a JSON string
     */
-    public async accessResource(method: string, resource: string, path: string, input: object | null): Promise<string> {
-        let url: string = this.config.formatUrl(resource, path);
+    public async accessResource(method: string, resource: string, path: string, input: object | null, query: string): Promise<string> {
+        let url: string = this.config.formatUrl(resource, path, query);
+
         let token: string = await this.getAccessToken();
         let result: string = await this.sendRequest(method, url, input, token);
         return result;
@@ -130,7 +133,7 @@ export class Server {
     */
     private async getAccessToken(): Promise<string> {
         let method: string = "POST";
-        let url: string = this.config.formatUrl("token", "");
+        let url: string = this.config.formatUrl("token", "", "");
         let body: string = `grant_type=password&username=${this.config.credentials?.username}&password=${this.config.credentials?.password}`;
         let headers: ifm.IHeaders = { "content-type": "application/x-www-form-urlencoded" };
 

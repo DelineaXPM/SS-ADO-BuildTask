@@ -16,6 +16,7 @@ export class ServerTaskParameters {
     public secretId: string | undefined;
     public fieldFilter: string[] | undefined;
     public variablePrefix: string | undefined;
+    public comments: string | undefined;
 
     /**
      * Builds the vault configuration and assigns other
@@ -32,6 +33,8 @@ export class ServerTaskParameters {
         this.secretId = tl.getInput("SecretId", true);
         this.fieldFilter = tl.getDelimitedInput("FieldFilter", ",", false);
         this.variablePrefix = tl.getInput("VariablePrefix", false);
+        this.comments = tl.getInput("Comments", false);
+
         return this;
     }
 

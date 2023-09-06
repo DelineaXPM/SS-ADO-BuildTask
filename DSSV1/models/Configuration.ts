@@ -38,7 +38,7 @@ export class Configuration {
     * @param path the path to the resource
     * @returns the url to the resource
     */
-    public formatUrl(resource: string, path: string): string {
+    public formatUrl(resource: string, path: string, query: string): string {
         if (!this.serverUrl) {
             return "";
         }
@@ -47,6 +47,10 @@ export class Configuration {
             return `${this.serverUrl}/${this.tokenPathUri}`;
         }
 
-        return `${this.serverUrl}/${this.apiPathUri}/${resource}/${path}`;
+        let base = `${this.serverUrl}/${this.apiPathUri}/${resource}/${path}`;
+
+        return query
+            ? base
+            : `${base}?${encodeURIComponent(query)}`;
     }
 }
