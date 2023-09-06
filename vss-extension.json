@@ -1,9 +1,9 @@
 {
     "manifestVersion": 1,
-    "id": "cloudkitects-ss-task",
+    "id": "ss-task",
     "name": "Cloudkitects Secret Server Azure DevOps Task",
     "version": "1.0.0",
-    "publisher": "CLoudkitects",
+    "publisher": "cloudkitects",
     "targets": [
         {
             "id": "Microsoft.VisualStudio.Services"

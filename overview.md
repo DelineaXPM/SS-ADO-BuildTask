@@ -12,6 +12,7 @@ To retrieve secrets, the task requires:
 - Username
 - Password
 - Secret Id
+- Comment when required by policy
 
 It is recomended that the password be stored in Azure Key Vault. Using this approach requires an additional task in the pipeline to retrieve the password first which can then be referenced as an environment variable in the DSS task configuration.
 
