@@ -25,4 +25,4 @@ Using * for the field filter will retrieve all the fields from the secret. A spe
 
 Environment variable names are constructed using the configured variable prefix and the slug name. For example, with a variable prefix of "DSS_", the field with slug name "xyz" will result in an environment variable with name "DSS_xyz".
 
-![Cloudkitects Secret Server Task Configuration](https://github.com/DelineaXPM/SS-ADO-BuildTask/raw/main/images/task-config.png)
+![Cloudkitects Secret Server Task Configuration](https://github.com/cloudkitects/SS-ADO-BuildTask/raw/main/images/task-config.png)
