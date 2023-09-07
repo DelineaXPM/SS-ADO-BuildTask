@@ -16,7 +16,7 @@ export class ServerTaskParameters {
     public secretId: string | undefined;
     public fieldFilter: string[] | undefined;
     public variablePrefix: string | undefined;
-    public comments: string | undefined;
+    public comment: string = "Azure DevOps Secret Server Task";
 
     /**
      * Builds the vault configuration and assigns other
@@ -33,7 +33,13 @@ export class ServerTaskParameters {
         this.secretId = tl.getInput("SecretId", true);
         this.fieldFilter = tl.getDelimitedInput("FieldFilter", ",", false);
         this.variablePrefix = tl.getInput("VariablePrefix", false);
-        this.comments = tl.getInput("Comments", false);
+
+        let comment = tl.getInput("Comment", false);
+
+        if (comment !== undefined && comment?.length > 0)
+        {
+            this.comment = comment;
+        }
 
         return this;
     }
