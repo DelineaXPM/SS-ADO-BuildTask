@@ -7,11 +7,11 @@
     "helpUrl": "https://github.com/cloudkitects/SS-ADO-BuildTask",
     "helpMarkDown": "[Learn more about this task](https://github.com/cloudkitects/SS-ADO-BuildTask)",
     "category": "Deploy",
-    "author": "Cloudkitects",
+    "author": "cloudkitects",
     "version": {
         "Major": 1,
         "Minor": 0,
-        "Patch": 4
+        "Patch": 5
     },
     "instanceNameFormat": "Retrieve secret $(SecretId) from Delinea Secret Server",
     "inputs": [
