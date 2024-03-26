@@ -14,9 +14,9 @@
     "typed-rest-client": "1.8.11"
   },
   "devDependencies": {
-    "@types/mocha": "10.0.1",
-    "@types/node": "20.2.1",
-    "@types/q": "1.5.5",
+    "@types/mocha": "10.0.6",
+    "@types/node": "20.11.30",
+    "@types/q": "1.5.8",
     "sync-request": "6.1.0"
   },
   "overrides": {
