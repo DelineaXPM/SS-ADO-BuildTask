@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "azure-pipelines-task-lib": "4.12.1",
+    "azure-pipelines-task-lib": "4.13.0",
     "mocha": "10.4.0",
     "typed-rest-client": "1.8.11"
   },
