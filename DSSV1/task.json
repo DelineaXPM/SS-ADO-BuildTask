@@ -11,7 +11,7 @@
     "version": {
         "Major": 0,
         "Minor": 0,
-        "Patch": 8
+        "Patch": 9
     },
     "instanceNameFormat": "Retrieve secret $(SecretId) from Delinea Secret Server",
     "inputs": [
@@ -92,8 +92,8 @@
         }
     ],
     "execution": {
-        "Node": {
-            "target": "index.js"
-        }
+        "Node10": { "target": "index.js" },
+        "Node16": { "target": "index.js" },
+        "Node": { "target": "index.js" }
     }
 }

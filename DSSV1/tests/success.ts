@@ -16,5 +16,6 @@ tmr.setInput('Username', config.credentials.username);
 tmr.setInput('Password', config.credentials.password);
 tmr.setInput('SecretId', config.secretId);
 tmr.setInput('VariablePrefix', config.variablePrefix);
+tmr.setInput('Comment', config.comment);
 
 tmr.run();

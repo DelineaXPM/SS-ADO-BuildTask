@@ -35,7 +35,7 @@ async function run() {
         /**
          * Get the secret from the server.
          */
-        let secret: Secret = await server.getSecret(taskParameters.secretId);
+        let secret: Secret = await server.getSecret(taskParameters.secretId, taskParameters.comment ?? "");
         if (!secret.id) {
             tl.setResult(tl.TaskResult.Failed, "Secret not found", true);
             return;
