@@ -9,13 +9,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "azure-pipelines-task-lib": "4.17.2",
+    "azure-pipelines-task-lib": "4.17.3",
     "mocha": "11.0.1",
     "typed-rest-client": "1.8.11"
   },
   "devDependencies": {
-    "@types/mocha": "10.0.6",
-    "@types/node": "20.12.12",
+    "@types/mocha": "10.0.10",
+    "@types/node": "20.17.12",
     "@types/q": "1.5.8",
     "sync-request": "6.1.0"
   },
