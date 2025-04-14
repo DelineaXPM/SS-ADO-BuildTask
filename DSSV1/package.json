@@ -1,6 +1,6 @@
 {
-  "name": "CloudkitectsSS",
-  "version": "1.1.2",
+  "name": "DelineaSS",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,14 +9,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "azure-pipelines-task-lib": "4.4.0",
-    "mocha": "10.2.0",
-    "typed-rest-client": "1.8.11"
+    "azure-pipelines-task-lib": "4.17.3",
+    "mocha": "11.0.2",
+    "typed-rest-client": "2.1.0"
   },
   "devDependencies": {
-    "@types/mocha": "10.0.1",
-    "@types/node": "20.2.1",
-    "@types/q": "1.5.5",
+    "@types/mocha": "10.0.10",
+    "@types/node": "22.10.5",
+    "@types/q": "1.5.8",
     "sync-request": "6.1.0"
   },
   "overrides": {

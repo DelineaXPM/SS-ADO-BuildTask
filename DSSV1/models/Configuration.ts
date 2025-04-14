@@ -38,7 +38,7 @@ export class Configuration {
     * @param path the path to the resource
     * @returns the url to the resource
     */
-    public formatUrl(resource: string, path: string, comment: string): string {
+     public formatUrl(resource: string, path: string, comment: string | undefined | null): string  {
         if (!this.serverUrl) {
             return "";
         }
@@ -46,7 +46,10 @@ export class Configuration {
         if (resource === "token") {
             return `${this.serverUrl}/${this.tokenPathUri}`;
         }
+        if(comment){
+            return `${this.serverUrl}/${this.apiPathUri}/${resource}/${path}?autoComment=${encodeURIComponent(comment)}`;
+        }
+        return `${this.serverUrl}/${this.apiPathUri}/${resource}/${path}`;
 
-        return `${this.serverUrl}/${this.apiPathUri}/${resource}/${path}?autoComment=${encodeURIComponent(comment)}`;
     }
 }
