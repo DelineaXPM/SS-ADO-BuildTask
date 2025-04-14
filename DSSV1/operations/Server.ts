@@ -26,9 +26,9 @@ export class Server {
      * @param id specifies the secret id
      * @returns the secret as a JSON string
     */
-    public async getSecret(id: string, comment: string): Promise<Secret> {
+    public async getSecret(id: string, comment: string | undefined): Promise<Secret> {
         console.log(`server.getSecret: ${id}`);
-        let response: string = await this.accessResource("GET", "secrets", id, null, comment);
+        let response: string = await this.accessResource("GET", "secrets", id, null, comment ? `autoComment=${comment}` : "");
         let secret: Secret = Object.assign(new Secret, JSON.parse(response));
         return secret;
     }
