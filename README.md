@@ -1,7 +1,7 @@
 # The Delinea Secret Server Azure DevOps Task
-This repository contains the code for an Azure DevOps pipeline task which is used to read secrets from Delinea Secret Server.
+This repository contains the code for an Azure DevOps pipeline task which is used to read secrets from Delinea Secret Server or Delinea platform.
 
-Please find the Delinea Secret Server ADO Task in the VisualStudio Marketplace here: https://marketplace.visualstudio.com/items?itemName=Delinea.delinea-ss-task
+Please find the Delinea Secret Server or Delinea platform ADO Task in the VisualStudio Marketplace here: https://marketplace.visualstudio.com/items?itemName=Delinea.delinea-ss-task
 
 ## Prerequisites
 * [Visual Studio Code](https://code.visualstudio.com/)
@@ -59,13 +59,24 @@ From the 'Run' menu, select 'Start Debugging' OR F5.
 Create a *success_config.json* in the **DSSV1\tests** directory:
 ```json
 {
+  "platForm": {
+    "serverUrl": "https://mytenent.platForm.com",
+    "credentials": {
+      "username": "myusername",
+      "password": "mypassword"
+    },
+    "secretId": 10,
+    "variablePrefix": "DSS_"
+  },
+  "secretServer": {
     "serverUrl": "https://mytenent.secretservercloud.com",
     "credentials": {
-        "username": "myusername",
-        "password": "mypassword"
+      "username": "myusername",
+      "password": "mypassword"
     },
-    "secretId": 1,
+    "secretId": 10,
     "variablePrefix": "DSS_"
+  }
 }
 ```
 Create a *failure_config.json* in the **DSSV1\tests** directory:

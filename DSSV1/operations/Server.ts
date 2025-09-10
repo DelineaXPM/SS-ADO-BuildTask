@@ -43,8 +43,13 @@ export class Server {
      * @returns the resource as a JSON string
     */
     public async accessResource(method: string, resource: string, path: string, input: object | null, comment: string): Promise<string> {
+        // Try to get token using checkPlatformDetails
+        let token: string = await this.checkPlatformDetails(this.config.serverUrl || "");
+        if (!token) {
+            // Fallback to SECRET SERVER access token retrieval
+            token = await this.getAccessToken();
+        }
         let url: string = this.config.formatUrl(resource, path, comment);
-        let token: string = await this.getAccessToken();
         let result: string = await this.sendRequest(method, url, input, token);
         return result;
     }
@@ -145,4 +150,104 @@ export class Server {
 
         return result.access_token;
     }
+        
+    /**
+     * Checks platform details for the given base URL.
+     * @param baseURL The base URL to check.
+     * @returns A promise resolving to the access token string, or throws an error.
+     */
+    public async checkPlatformDetails(baseURL: string): Promise<string> {
+        const trimUrl = (url: string) => url.replace(/\/+$/, '');
+        const platformHealthCheckUrl = `${trimUrl(baseURL)}/health`;
+        const ssHealthCheckUrl = `${trimUrl(baseURL)}/api/v1/healthcheck`;
+
+        const isHealthy = await this.checkJSONResponse(ssHealthCheckUrl);
+        if (isHealthy) {
+            return '';
+        } else {
+            const isPlatformHealthy = await this.checkJSONResponse(platformHealthCheckUrl);
+            let accessToken = '';
+            if (isPlatformHealthy) {
+                const requestData = new URLSearchParams();
+                requestData.set('grant_type', 'client_credentials');
+                requestData.set('client_id', this.config.credentials?.username || '');
+                requestData.set('client_secret', this.config.credentials?.password || '');
+                requestData.set('scope', 'xpmheadless');
+
+                const tokenUrl = `${trimUrl(baseURL)}/identity/api/oauth2/token/xpmplatform`;
+                const headers = { 'Content-Type': 'application/x-www-form-urlencoded' };
+
+                console.log(`server.checkPlatformDetails: ${'POST'} ${tokenUrl}`);
+                const response = await _httpClient.request('POST', tokenUrl, requestData.toString(), headers);
+                const data = await response.readBody();
+                let tokenjsonResponse: any;
+                if (this.isSuccessStatusCode(response.message.statusCode))
+                {
+                    try 
+                    {
+                        tokenjsonResponse = JSON.parse(data);
+                    } catch (err)
+                    {
+                        console.log(`server.checkPlatformDetails: ${'Error parsing get token response: ' + err} `);
+                        return '';
+                    }
+                    accessToken = tokenjsonResponse.access_token;
+                    // Get vaults
+                    const vaultsUrl = `${trimUrl(baseURL)}/vaultbroker/api/vaults`;
+                    const vaultHeaders = { 'Authorization': 'Bearer ' + accessToken };
+
+                    console.log(`server.checkPlatformDetails: ${'GET'} ${vaultsUrl}`);
+                    const vaultsResponse = await _httpClient.request('GET', vaultsUrl, '', vaultHeaders);
+                    const vaultsData = await vaultsResponse.readBody();
+                    let vaultJsonResponse: any;
+                    try {
+                        vaultJsonResponse = JSON.parse(vaultsData);
+                    } catch (err) {
+                        console.log(`server.checkPlatformDetails: ${'Error parsing vaults response: ' + err} `);
+                        return '';
+                    }
+                    let vaultURL = '';
+                    if (vaultJsonResponse.vaults) {
+                        for (const vault of vaultJsonResponse.vaults) {
+                            if (vault.isDefault && vault.isActive && vault.connection && vault.connection.url) {
+                                vaultURL = vault.connection.url;
+                                break;
+                            }
+                        }
+                    }
+                    if (vaultURL) {
+                        this.config.serverUrl = vaultURL;
+                    } else {
+                        console.log(`server.checkPlatformDetails: No configured vault found`);
+                        return '';
+                    }
+                }
+                return accessToken;
+            }
+        }
+        return '';
+    }
+
+    /**
+     * Checks if the given URL returns a healthy response.
+     * @param url The URL to check.
+     * @returns True if healthy, false otherwise.
+    */
+    private async checkJSONResponse(url: string): Promise<boolean> {
+    try {
+        const response = await _httpClient.get(url);
+        const body = await response.readBody();
+        // Only return true if status code is success and body is exactly "Healthy"
+        if (this.isSuccessStatusCode(response.message.statusCode) ) {
+             if(body.trim() === "Healthy" || JSON.parse(body).Healthy === true)
+             {
+                return true;
+             }
+        }
+        return false;
+    } catch (err) {
+        console.log('Error making GET request:', err);
+        return false;
+    }
+   }
 }
