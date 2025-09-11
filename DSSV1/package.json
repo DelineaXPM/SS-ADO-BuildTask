@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "SET TASK_TEST_TRACE=1 && tsc && mocha .\\tests\\_suite.js",
+    "test": "SET TASK_TEST_TRACE=1 && tsc && mocha .\\tests\\_suite.js"
   },
   "author": "",
   "license": "ISC",
