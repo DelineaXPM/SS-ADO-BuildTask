@@ -1,7 +1,7 @@
 {
     "manifestVersion": 1,
     "id": "delinea-ss-task",
-    "name": "Delinea Secret Server Azure DevOps Task",
+    "name": "Delinea Server Azure DevOps Task",
     "version": "0.0.9",
     "publisher": "Delinea",
     "targets": [
@@ -9,7 +9,7 @@
             "id": "Microsoft.VisualStudio.Services"
         }
     ],    
-    "description": "Azure DevOps task for accessing secrets from Delinea Secret Server",
+    "description": "Azure DevOps task for accessing secrets from Delinea Secret Server and Delinea Platform.",
     "categories": [
         "Azure Pipelines"
     ],

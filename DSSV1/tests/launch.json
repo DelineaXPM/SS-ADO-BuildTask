@@ -1,0 +1,19 @@
+{
+    "args": [
+        "-u",
+        "bdd",
+        "--timeout",
+        "999999",
+        "--colors",
+        "${workspaceFolder}/DSSV1/tests"
+    ],
+    "internalConsoleOptions": "openOnSessionStart",
+    "name": "Mocha Tests",
+    "program": "${workspaceFolder}/DSSV1/node_modules/mocha/bin/_mocha",
+    "request": "launch",
+    "skipFiles": [
+        "<node_internals>/**"
+    ],
+    "type": "node",
+    "cwd": "${workspaceRoot}/DSSV1/",
+}

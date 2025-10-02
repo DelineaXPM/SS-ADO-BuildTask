@@ -26,8 +26,6 @@ export class ServerTaskParameters {
         this.config = new Configuration();
         this.config.credentials = new UserCredential();
         this.config.serverUrl = tl.getInput("ServerUrl", false);
-        this.config.apiPathUri = tl.getInput("ApiPathUri", false);
-        this.config.tokenPathUri = tl.getInput("TokenPathUri", false);
         this.config.credentials.username = tl.getInput("Username", true);
         this.config.credentials.password = tl.getInput("Password", true);
         this.secretId = tl.getInput("SecretId", true);
