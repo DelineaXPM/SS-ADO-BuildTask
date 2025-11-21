@@ -1,14 +1,12 @@
-# Delinea Secret Server Task for Azure DevOps
+# Delinea Platform Secret Server Task for Azure DevOps
 
-The task in this extension allows the retrieval of secrets for use in both Build and Release pipelines in Azure DevOps. The task sets environment variables for the requested fields with variable names based on the slug names with an optional configured prefix. 
+The task in this extension retrieves secrets for use in both Build and Release pipelines in Azure DevOps. It sets environment variables for each requested field, using the slug name (with an optional prefix) as the variable name. This functionality works for both the Delinea Platform and Delinea Secret Server, allowing pipelines to securely consume secrets from either product.
 
 ## Configuration
 
 To retrieve secrets, the task requires:
 
-- Url for the source Secret Server
-- Api path uri (e.g. /api/v1)
-- Token path uri (e.g. /oauth2/token)
+- Url for the source Delinea Platform Or Secret Server
 - Username
 - Password
 - Secret Id
@@ -23,4 +21,4 @@ Using * for the field filter will retrieve all the fields from the secret. A spe
 
 Environment variable names are constructed using the configured variable prefix and the slug name. For example, with a variable prefix of "DSS_", the field with slug name "xyz" will result in an environment variable with name "DSS_xyz".
 
-![Delinea Secret Server Task Configuration](https://github.com/DelineaXPM/SS-ADO-BuildTask/raw/main/images/task-config.png)
+![Delinea Platform Secret Server Task Configuration](https://github.com/DelineaXPM/SS-ADO-BuildTask/raw/main/images/task-config.png)
