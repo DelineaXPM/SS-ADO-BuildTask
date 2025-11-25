@@ -2,8 +2,8 @@
     "$schema": "https://raw.githubusercontent.com/Microsoft/azure-pipelines-task-lib/master/tasks.schema.json",
     "id": "22D31716-0E3C-45D3-8B7C-675C4AAC0E20",
     "name": "DelineaSS",
-    "friendlyName": "Delinea SS",
-    "description": "Retrieve secrets from Delinea Secret Server",
+    "friendlyName": "Delinea Platform SS",
+    "description": "Retrieve secrets from Delinea Platform Secret Server",
     "helpUrl": "https://github.com/DelineaXPM/SecretServer.AzureDevOpsTask",
     "helpMarkDown": "[Learn more about this task](https://github.com/DelineaXPM/SS-ADO-BuildTask)",
     "category": "Deploy",
@@ -13,7 +13,7 @@
         "Minor": 0,
         "Patch": 9
     },
-    "instanceNameFormat": "Retrieve secret $(SecretId) from Delinea Secret Server or platform",
+    "instanceNameFormat": "Retrieve secret $(SecretId) from Delinea Platform Secret Server",
     "inputs": [
         {
             "name": "ServerUrl",
@@ -33,7 +33,7 @@
             "label": "Username",
             "defaultValue": "",
             "required": true,
-            "helpMarkDown": "Enter your Secret Server username."
+            "helpMarkDown": "Enter your Delinea platform or Secret Server username."
         },
         {
             "name": "Password",
@@ -41,7 +41,7 @@
             "label": "Password",
             "defaultValue": "",
             "required": true,
-            "helpMarkDown": "Enter your Secret Server password."
+            "helpMarkDown": "Enter your Delinea platform or Secret Server password."
         },
         {
             "name": "SecretId",
