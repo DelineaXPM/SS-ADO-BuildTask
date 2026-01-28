@@ -11,7 +11,7 @@
   "dependencies": {
     "azure-pipelines-task-lib": "5.2.0",
     "mocha": "11.5.0",
-    "typed-rest-client": "2.1.0"
+    "typed-rest-client": "2.2.0"
   },
   "devDependencies": {
     "@types/mocha": "10.0.10",
