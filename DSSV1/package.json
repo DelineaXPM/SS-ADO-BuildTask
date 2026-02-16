@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "azure-pipelines-task-lib": "5.2.0",
+    "azure-pipelines-task-lib": "5.2.3",
     "mocha": "11.5.0",
     "typed-rest-client": "2.1.0"
   },
@@ -20,6 +20,10 @@
     "sync-request": "6.1.0"
   },
    "overrides": {
-    "mockery": "2.1.0"
+    "mockery": "2.1.0",
+    "glob": "^11.0.0",
+    "diff": "^8.0.3",
+    "js-yaml": "^4.1.1",
+    "qs": "^6.13.0"
   }
 }
